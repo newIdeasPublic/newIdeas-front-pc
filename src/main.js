@@ -8,6 +8,10 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 Vue.use(ElementUI)
 
+// 引入全局api
+import api from '@/api'
+Vue.prototype.api = api
+
 Vue.config.productionTip = false
 
 new Vue({
