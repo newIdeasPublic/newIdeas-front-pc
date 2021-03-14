@@ -13,7 +13,15 @@ const routes = [
     children: [
       {
         path: '/list',
+        component: () => import('@/views/list')
+      },
+      {
+        path: '/list1',
         component: () => import('@/views/list1')
+      },
+      {
+        path: '/list2',
+        component: () => import('@/views/list2')
       }
     ]
   }
