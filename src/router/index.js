@@ -1,14 +1,34 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-// import LoginLayout from '@/views/layout/Login'
+import LoginLayout from '@/layout/Login'
 import MainLayout from '@/layout/Main'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '',
+    path: '/login',
+    component: LoginLayout,
+    children: [
+      {
+        path: '/',
+        component: () => import('@/views/login')
+      }
+    ]
+  },
+  {
+    path: '/register',
+    component: LoginLayout,
+    children: [
+      {
+        path: '/',
+        component: () => import('@/views/register')
+      }
+    ]
+  },
+  {
+    path: '/',
     component: MainLayout,
     children: [
       {
