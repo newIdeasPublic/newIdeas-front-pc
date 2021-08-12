@@ -1,6 +1,7 @@
 # modern
 
 ## Project setup
+node 8.17.0
 ```
 npm install
 ```

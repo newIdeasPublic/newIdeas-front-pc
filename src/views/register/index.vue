@@ -6,8 +6,8 @@
       <div class="step-item" :class="activeName=='three'?'active':''" @click="activeName='three'">详细信息</div>
     </div>
     <div>
-      <TabPaneA v-show="activeName=='first'"></TabPaneA>
-      <TabPaneB v-show="activeName=='second'"></TabPaneB>
+      <TabPaneA v-show="activeName=='first'" @selRegTabFun="selRegTabFun($event)"></TabPaneA>
+      <TabPaneB v-show="activeName=='second'" @selRegTabFun="selRegTabFun($event)"></TabPaneB>
       <TabPaneC v-show="activeName=='three'"></TabPaneC>
     </div>
   </div>
@@ -57,6 +57,15 @@ export default {
   data () {
     return { // 默认第一个选项卡
       activeName: 'first'
+    }
+  },
+  methods: {
+    selRegTabFun (tag) {
+      if (tag == '1') {
+        this.activeName = 'second'
+      } else if (tag == '2') {
+        this.activeName = 'three'
+      }
     }
   },
   mounted () {
